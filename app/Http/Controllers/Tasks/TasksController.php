@@ -21,9 +21,9 @@ class TasksController extends Controller
         $user = $request->user();
         $tasks = $user->tasks;
         return view('tasks.index',
-        [
-            'tasks'=>$tasks,
-        ]
+            [
+                'tasks' => $tasks,
+            ]
         );
     }
 
@@ -48,6 +48,12 @@ class TasksController extends Controller
 //        $task->name = $request->name;
 //        $task->user_id = $user->id;
 //        $task->save();
+        return redirect(route('tasks.index'));
+    }
+
+    public function delete(Task $task)
+    {
+        $task->delete();
         return redirect(route('tasks.index'));
     }
 }
