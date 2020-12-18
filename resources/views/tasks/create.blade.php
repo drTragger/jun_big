@@ -3,8 +3,9 @@
 @extends('layouts.default')
 
 @section('content')
+    @include('common.errors')
     <!-- Форма новой задачи -->
-    <form action="{{ route('tasks.create') }}" method="POST" class="form-horizontal">
+    <form action="{{ route('tasks.add') }}" method="POST" class="form-horizontal">
     {{ csrf_field() }}
 
     <!-- Имя задачи -->
