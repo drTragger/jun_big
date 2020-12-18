@@ -16,6 +16,6 @@ class TasksController extends Controller
 
     public function create()
     {
-        echo 'create';
+        return view('tasks.create');
     }
 }
