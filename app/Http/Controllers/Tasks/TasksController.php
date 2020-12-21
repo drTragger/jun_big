@@ -53,6 +53,7 @@ class TasksController extends Controller
 
     public function delete(Task $task)
     {
+        $this->authorize('destroy', $task);
         $task->delete();
         return redirect(route('tasks.index'));
     }
